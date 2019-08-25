@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row py-md-5 pt-3">
+    <div class="col-12">
+      <div class="display-md-4 display-5 font-weight-bold text-center">
+        This lock has a <span class="text-danger">3 digit code</span>
+        <br> Can you crack it <br>
+        using <span class="text-danger">only these hints?</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <img src="assets/combination-padlock-icon.png" alt="" class="w-100">
+      <input type="text" [(ngModel)]="answer0" (focus)="clearAnswer(0)" (click)="clearAnswer(0)" class="hint-text"
+        maxlength='1'>
+      <input type="text" [(ngModel)]="answer1" (focus)="clearAnswer(1)" (click)="clearAnswer(1)" class="hint-text"
+        maxlength='1'>
+      <input type="text" [(ngModel)]="answer2" (focus)="clearAnswer(2)" (click)="clearAnswer(2)" class="hint-text"
+        maxlength='1'>
+      <div class="code">CODE</div>
+      <button (click)="submitAnswer()">SUBMIT</button>
+    </div>
+    <div class="col-md-8">
+      <app-hint *ngFor="let hint of hints" [hint]="hint"></app-hint>
+    </div>
+  </div>
+</div>
